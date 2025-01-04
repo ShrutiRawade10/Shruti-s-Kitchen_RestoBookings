@@ -1,0 +1,145 @@
+@import "react-day-picker/dist/style.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 24 95% 50%;
+    --primary-foreground: 0 0% 100%;
+ 
+    --secondary: 20 10% 96%;
+    --secondary-foreground: 24 95% 40%;
+ 
+    --muted: 20 10% 96%;
+    --muted-foreground: 24 5% 45%;
+ 
+    --accent: 24 95% 97%;
+    --accent-foreground: 24 95% 40%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 5% 90%;
+    --input: 20 5% 90%;
+    --ring: 24 95% 50%;
+ 
+    --radius: 0.75rem;
+
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gray-50;
+  }
+} 
+
+/* Custom styles for time slots */
+.time-slot {
+  @apply px-4 py-2 text-sm rounded-md transition-all duration-200 transform;
+}
+
+.time-slot:not(.selected):not(:disabled):hover {
+  @apply bg-gray-200 scale-105 shadow-md;
+}
+
+.time-slot.selected {
+  @apply bg-blue-500 text-white scale-105 shadow-md;
+}
+
+.time-slot:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+/* Card styles */
+.booking-card {
+  @apply bg-white rounded-2xl shadow-lg overflow-hidden;
+}
+
+.booking-card-header {
+  @apply bg-blue-500 p-6 text-white;
+}
+
+/* Form styles */
+.form-container {
+  @apply p-6 space-y-6;
+}
+
+.input-group {
+  @apply space-y-2;
+}
+
+.input-label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.input-field {
+  @apply w-full rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500;
+} 
+
+/* Add these responsive styles */
+@layer utilities {
+  .form-container {
+    @apply p-4 sm:p-6 space-y-4 sm:space-y-6;
+  }
+
+  .input-group {
+    @apply space-y-1.5 sm:space-y-2;
+  }
+
+  .input-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-sm sm:text-base;
+  }
+
+  .time-slot {
+    @apply px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-md transition-colors;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Update card styles */
+.booking-card {
+  @apply bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden;
+}
+
+.booking-card-header {
+  @apply bg-blue-500 p-4 sm:p-6 text-white;
+} 
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+} 
